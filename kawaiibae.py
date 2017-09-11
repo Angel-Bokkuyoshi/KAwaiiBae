@@ -170,26 +170,22 @@ async def on_message(message):
     server = my_bot.servers[message.server.id]
     server.msg_stack.append(message)
     msg = message.content
-    render = msg.split()
-    render1 = ""
-    render2 = ""
-    render3 = ""
+    render = list()
     try:
-        render1 = str(render[0])
-        render2 = str(render[0]) + " " + str(render[1])
-        render3 = str(render[0]) + " " + str(render[1]) + " " + str(render[2])
-    except IndexError: pass
+        render.append(msg.split()[0] + msg.split()[1] + msg.split()[2])
+    except: pass
+    try:
+        render.append(msg.split()[0]+ msg.split()[1])
+    except: pass
+    try:
+        render.append(msg.split()[0])
+    except: pass
     
-    try:
-        await my_bot.cmds[render3].apply(message, msg, my_bot)
-    except KeyError or TypeError:
+    for i in render:   
         try:
-            await my_bot.cmds[render2].apply(message, msg, my_bot)
+            await my_bot.cmds[i].apply(message, msg, my_bot)
         except KeyError or TypeError:
-            try:
-                await my_bot.cmds[render1].apply(message, msg, my_bot)
-            except KeyError or TypeError:
-                pass
+            pass
     
 file = open(storage + "config.json")
 aa = json.load(file)              
