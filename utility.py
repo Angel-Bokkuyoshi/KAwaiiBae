@@ -58,13 +58,13 @@ class Utility:
         
         if "x" in formula:
             for i in range(0, len(formula)):
-                formula[i] = x if formula[i] == "x" else formula[i]
+                formula[i] = ("(") + x + (")") if formula[i] == "x" else formula[i]
         if "y" in formula:
             for i in range(0, len(formula)):
-                formula[i] = y if formula[i] == "y" else formula[i]
+                formula[i] = ("(") + y + ")" if formula[i] == "y" else formula[i]
         if "z" in formula:
             for i in range(0, len(formula)):
-                formula[i] = z if formula[i] == "z" else formula[i]
+                formula[i] = ("(") + z + (")") if formula[i] == "z" else formula[i]
 
         for a in formula:
             expr += a

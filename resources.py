@@ -52,11 +52,38 @@ emb = ["``", "``"]
 emb2 = ["```", "```"]
 bold = ["**", "**"]
 
-heart = u"\u2764"
-anger = u"\U0001F4A2"
-white_tick = u"\u2705"
-no_access = u"\U0001F6AB"
+heart = "\u2764"
+anger = "\U0001F4A2"
+white_tick = "\u2705"
+no_access = "\U0001F6AB"
+alphanum = {"0":"0\N{COMBINING ENCLOSING KEYCAP}", "1":"1\N{COMBINING ENCLOSING KEYCAP}", "2":"2\N{COMBINING ENCLOSING KEYCAP}", "3":"3\N{COMBINING ENCLOSING KEYCAP}", "4":"4\N{COMBINING ENCLOSING KEYCAP}",
+            "5":"5\N{COMBINING ENCLOSING KEYCAP}", "6":"6\N{COMBINING ENCLOSING KEYCAP}", "7":"7\N{COMBINING ENCLOSING KEYCAP}", "8":"8\N{COMBINING ENCLOSING KEYCAP}", "9":"9\N{COMBINING ENCLOSING KEYCAP}",
+            "a":"\U0001F1E6", "b":"\U0001F1E7", "c":"\U0001F1E8", "d":"\U0001F1E9", "e":"\U0001F1EA", "f":"\U0001F1EB", "g":"\U0001F1EC", "h":"\U0001F1ED", "i":"\U0001F1EE", "j":"\U0001F1EF",
+            "k":"\U0001F1F0", "l":"\U0001F1F1", "m":"\U0001F1F2", "n":"\U0001F1F3", "o":"\U0001F1F4", "p":"\U0001F1F5", "q":"\U0001F1F6", "r":"\U0001F1F7", "s":"\U0001F1F8", "t":"\U0001F1F9",
+            "u":"\U0001F1FA", "v":"\U0001F1FB", "w":"\U0001F1FC", "x":"\U0001F1FD", "y":"\U0001F1FE", "z":"\U0001F1FF", " ":"\U000026aa"}
 
+#entertainment
+bliss = ["https://68.media.tumblr.com/ae10eb0ee90baff1ba03f3550779347c/tumblr_o38u8w0BXE1sksryco1_500.gif",
+        "http://i.imgur.com/CdPpFns.gif",
+        "http://i.imgur.com/MNy1f0c.gif",
+        "http://pa1.narvii.com/6281/baa1196a1375fc230f32e423220aad504f9feb0f_hq.gif",
+        "http://media.tumblr.com/tumblr_lzyo5jEt0O1qecah3o1_500.gif",
+        "https://media.tenor.com/images/3090f7814cc27a9da60e752a0f7e1fe1/tenor.gif",
+        "http://i.imgur.com/EqXsPHa.gif",
+        "https://68.media.tumblr.com/b6e5fa651617ed3a7907f1f23d1c18f8/tumblr_opkaglYJNM1sk1rjvo1_500.gif",
+        "http://pa1.narvii.com/5782/f71d840730510e4067111b1240484f34115e473f_hq.gif",
+        ]
+burn = ["http://media1.giphy.com/media/UD5oBoL8PanoQ/giphy.gif",
+        "https://i.pinimg.com/originals/40/4a/c4/404ac4fc6f606605f87e0f6dce17e371.gif",
+        "https://media.tenor.com/images/e57b700d3e915754861565542d865f01/tenor.gif",
+        "https://memecrunch.com/meme/B5UVU/burn-it-with-fire/image.gif?w=400&c=1",
+        "https://media.tenor.com/images/692d052ee377f19a69b374d238d75cb8/tenor.gif",
+        "http://i.imgur.com/RRPco3Q.jpg",
+        "http://68.media.tumblr.com/a5ae8eae466505b3910434e2b2cf10a4/tumblr_inline_ms2nwfXQd01qz4rgp.jpg",
+        "http://data.whicdn.com/images/28490642/original.gif",
+        "http://i.imgur.com/eVBQ2dT.gif",
+        "http://img41.laughinggif.com/pic/HTTP2YuYXNzZXQuc291cC5pby9hc3NldC8zNzU0LzE4MjNfYzU0Ni5naWYlog.gif"
+        ]
 
 #utility
 __utility = True

@@ -26,14 +26,13 @@ class Chat:
             while self.chat_on:
                 tmp = await my_bot.bot.wait_for_message(channel = channel)
                 if self.postignore == 0:
-                    if tmp.channel == channel:
-                        tmp2 = m_message.content
-                        if len(tmp2) + len(tmp.content) <= 440:
-                            tmp2 += "\n" + tmp.author.name + ": " + tmp.content
-                        else:
-                            tmp2 = tmp.author.name + ": " + tmp.content
-                        await my_bot.bot.delete_message(tmp)
-                        m_message = await my_bot.bot.edit_message(m_message, tmp2)
+                    await my_bot.bot.delete_message(tmp)
+                    tmp2 = m_message.content
+                    if len(tmp2) + len(tmp.content) <= 440:
+                        tmp2 += "\n" + tmp.author.name + ": " + tmp.content
+                    else:
+                        tmp2 = tmp.author.name + ": " + tmp.content
+                    m_message = await my_bot.bot.edit_message(m_message, tmp2)
 
                 if self.postignore > 0:
                     self.postignore -= 1

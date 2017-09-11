@@ -18,6 +18,7 @@ try:
     from owner import Owner
     from filter import Filter
     from chat import Chat
+    from entertainment import Entertainment
 except ImportError:
     print("One or more modules are missing, this bot cannot work without them.")
     exit(1)
@@ -48,7 +49,7 @@ class Server():
         self.farewell_on = False
         self.farewell_channel = "" #Storage for the Farewell channel name
         self.farewell = "" #Storage for the farewell message
-        self.msg_stack = list() #Recived messages
+        self.msg_stack = list() #Recieved messages
 
     async def update(a):
         file = open(storage + a.server.id + ".json", "w")
@@ -99,6 +100,11 @@ class KBot: #CORE BOT
             self.cmdescs.update(Chat(self).settings().descs)
             for a in Chat(self).lis:
                 self.cmds[a] = Command(a, self.modules[4].lis[a])
+        if Entertainment(self).open():
+            self.modules.append(Entertainment(self))
+            self.cmdescs.update(Entertainment(self).settings().descs)
+            for a in Entertainment(self).lis:
+                self.cmds[a] = Command(a, self.modules[5].lis[a])
             
     def start(self, token): #Starts Bot
         self.bot.run(token)
@@ -142,7 +148,7 @@ async def on_server_join(server):
     file = open(storage + a.server.id + ".json", "w")
     aa = {"filter_targets":a.filter_targets, "log_channel":a.log_channel, "log_types":a.log_types, "welcome_on":a.welcome_on, "welcome_channel":a.welcome_channel, "welcome":a.welcome, "farewell_on":a.farewell_on, "farewell_channel":a.farewell_channel, "farewell":a.farewell}
     json.dump(aa, file)
-    my_bot.bot.send_message(server.default_channel, "Thank you for using KawaiiBae! If you do not want this channel to be used for Announcements\nSet your default channel with //channel default channelID")
+    await my_bot.bot.send_message(server.default_channel, "Thank you for using KawaiiBae! If you do not want this channel to be used for Announcements\nSet your default channel with //channel default channelID")
     
 @my_bot.bot.event
 async def on_server_role_create(role):
